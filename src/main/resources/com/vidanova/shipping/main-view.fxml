@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.vidanova.shipping.controller.MainController"
+            styleClass="root-pane">
+
+    <!-- ════════════════════════════════════════════════════════════
+         HEADER
+         ════════════════════════════════════════════════════════════ -->
+    <top>
+        <VBox styleClass="header-box">
+            <Label text="🍃 VidanovaStore" styleClass="brand-title"/>
+            <Label text="Generador de Confirmación de Guías de Envío"
+                   styleClass="brand-subtitle"/>
+        </VBox>
+    </top>
+
+    <!-- ════════════════════════════════════════════════════════════
+         CONTENT: formulario | previsualización
+         ════════════════════════════════════════════════════════════ -->
+    <center>
+        <HBox spacing="0" styleClass="content-hbox">
+
+            <!-- ── PANEL IZQUIERDO: formulario ──────────────────── -->
+            <VBox styleClass="form-panel" spacing="16" HBox.hgrow="NEVER">
+                <padding>
+                    <Insets top="28" right="28" bottom="24" left="28"/>
+                </padding>
+
+                <Label text="📋 Datos del Pedido" styleClass="section-title"/>
+
+                <!-- Nombre -->
+                <VBox spacing="5">
+                    <Label text="Nombre del destinatario" styleClass="field-label"/>
+                    <TextField fx:id="nombreField"
+                               promptText="Ej: Jacobo"
+                               styleClass="form-field"/>
+                </VBox>
+
+                <!-- Producto -->
+                <VBox spacing="5">
+                    <Label text="Producto" styleClass="field-label"/>
+                    <TextField fx:id="productoField"
+                               promptText="Ej: Crema Despigmentante Arbutin 7.0%"
+                               styleClass="form-field"/>
+                </VBox>
+
+                <!-- Número de Guía -->
+                <VBox spacing="5">
+                    <Label text="Número de Guía" styleClass="field-label"/>
+                    <TextField fx:id="numeroGuiaField"
+                               promptText="Ej: 074102602224"
+                               styleClass="form-field"/>
+                </VBox>
+
+                <!-- Precio COD -->
+                <VBox spacing="5">
+                    <Label text="Precio (COD — contraentrega)" styleClass="field-label"/>
+                    <TextField fx:id="precioField"
+                               promptText="Ej: 79900  →  $79.900"
+                               styleClass="form-field"/>
+                </VBox>
+
+                <!-- Dirección -->
+                <VBox spacing="5">
+                    <Label text="Dirección de entrega" styleClass="field-label"/>
+                    <TextField fx:id="direccionField"
+                               promptText="Ej: Kra 111c 78d-11 Villas de Granada"
+                               styleClass="form-field"/>
+                </VBox>
+
+                <!-- Separador -->
+                <Separator styleClass="form-separator"/>
+
+                <!-- Botones de acción -->
+                <HBox spacing="12">
+                    <Button fx:id="generarBtn"
+                            text="✨ Generar Confirmación"
+                            onAction="#handleGenerar"
+                            styleClass="btn-primary"
+                            maxWidth="Infinity"
+                            HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="limpiarBtn"
+                            text="🗑 Limpiar"
+                            onAction="#handleLimpiar"
+                            styleClass="btn-secondary"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- ── DIVISOR vertical ─────────────────────────────── -->
+            <Separator orientation="VERTICAL" styleClass="panel-divider"/>
+
+            <!-- ── PANEL DERECHO: previsualización ─────────────── -->
+            <VBox styleClass="preview-panel" spacing="14" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="28" right="28" bottom="24" left="28"/>
+                </padding>
+
+                <Label text="👁 Previsualización del Mensaje" styleClass="section-title"/>
+
+                <TextArea fx:id="previewArea"
+                          promptText="La confirmación generada aparecerá aquí…"
+                          editable="false"
+                          wrapText="true"
+                          styleClass="preview-area"
+                          VBox.vgrow="ALWAYS"/>
+
+                <!-- Fila inferior: botón copiar + label de estado -->
+                <HBox spacing="14" alignment="CENTER_LEFT">
+                    <Button fx:id="copiarBtn"
+                            text="📋 Copiar al Portapapeles"
+                            onAction="#handleCopiar"
+                            styleClass="btn-copy"
+                            disable="true"/>
+                    <Label fx:id="copyStatusLabel"
+                           text="✅ ¡Copiado al portapapeles!"
+                           styleClass="copy-status-label"
+                           visible="false"/>
+                </HBox>
+
+            </VBox>
+        </HBox>
+    </center>
+
+    <!-- ════════════════════════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════════════════════════ -->
+    <bottom>
+        <HBox styleClass="footer-box" alignment="CENTER">
+            <Label text="© 2026 VidanovaStore  •  Todos los derechos reservados"
+                   styleClass="footer-label"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

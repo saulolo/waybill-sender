@@ -1,0 +1,260 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   VidaNovaStore — Waybill Sender
+   Tema: Morado Pastel / Lavanda con Botones Verde Pastel y Letras Blancas
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── RAIZ ──────────────────────────────────────────────────────────────── */
+.root-pane {
+    -fx-background-color: #38304F;
+    -fx-font-family: "Segoe UI", -apple-system, "Helvetica Neue", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ─── HEADER ────────────────────────────────────────────────────────────── */
+.header-box {
+    -fx-background-color: #2D2641;
+    -fx-padding: 16 32 16 32;
+    -fx-border-color: transparent transparent #80D39B transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 0, 2);
+}
+
+.brand-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #80D39B;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.40), 8, 0, 0, 0);
+}
+
+.brand-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #DDD7EC;
+    -fx-font-style: italic;
+}
+
+/* ─── CONTENT HBOX ──────────────────────────────────────────────────────── */
+.content-hbox {
+    -fx-background-color: #38304F;
+}
+
+/* ─── PANEL FORMULARIO (IZQUIERDO) ──────────────────────────────────────── */
+.form-panel {
+    -fx-background-color: #42395C;
+    -fx-min-width: 380px;
+    -fx-pref-width: 390px;
+    -fx-max-width: 410px;
+    -fx-border-color: transparent #2A233C transparent transparent;
+    -fx-border-width: 0 2 0 0;
+}
+
+/* ─── PANEL PREVISUALIZACION (DERECHO) ──────────────────────────────────── */
+.preview-panel {
+    -fx-background-color: #342C4B;
+}
+
+/* ─── DIVISOR VERTICAL ──────────────────────────────────────────────────── */
+.panel-divider {
+    -fx-background-color: #2A233C;
+}
+
+/* ─── TITULOS DE SECCION ────────────────────────────────────────────────── */
+.section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-padding: 0 0 4 0;
+}
+
+/* ─── ETIQUETAS DE CAMPO (BLANCAS) ──────────────────────────────────────── */
+.field-label {
+    -fx-font-size: 12.5px;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+}
+
+/* ─── CAMPOS DE TEXTO (LETRAS BLANCAS) ──────────────────────────────────── */
+.form-field {
+    -fx-background-color: #29223A;
+    -fx-border-color: #5C507C;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #9F95BA;
+    -fx-padding: 9 13 9 13;
+    -fx-font-size: 13px;
+    -fx-pref-height: 40px;
+}
+
+.form-field:hover {
+    -fx-border-color: #80D39B;
+    -fx-background-color: #302844;
+}
+
+.form-field:focused {
+    -fx-background-color: #2D2540;
+    -fx-border-color: #80D39B;
+    -fx-border-width: 2;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.45), 10, 0, 0, 0);
+}
+
+/* ─── SEPARADOR ─────────────────────────────────────────────────────────── */
+.form-separator {
+    -fx-background-color: #52476F;
+    -fx-padding: 4 0 4 0;
+}
+
+/* ─── BOTON PRIMARIO: GENERAR (Verde Pastel) ────────────────────────────── */
+.btn-primary {
+    -fx-background-color: #80D39B;
+    -fx-text-fill: #0B4223;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-padding: 10 18 10 18;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.45), 12, 0, 0, 2);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #98E2B0;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.65), 16, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #68BA82;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+/* ─── BOTON SECUNDARIO: LIMPIAR (Verde Pastel Outline) ──────────────────── */
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #80D39B;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-color: #80D39B;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-padding: 10 16 10 16;
+    -fx-cursor: hand;
+    -fx-pref-width: 100px;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #80D39B;
+    -fx-text-fill: #0B4223;
+}
+
+.btn-secondary:pressed {
+    -fx-background-color: #68BA82;
+}
+
+/* ─── AREA DE PREVISUALIZACION (LETRAS BLANCAS) ─────────────────────────── */
+.preview-area {
+    -fx-background-color: #262035;
+    -fx-border-color: #554A73;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1.5;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #8A7FA8;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 13px;
+    -fx-padding: 14 16 14 16;
+    -fx-wrap-text: true;
+}
+
+.preview-area .content {
+    -fx-background-color: #262035;
+}
+
+.preview-area:focused {
+    -fx-border-color: #80D39B;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.35), 8, 0, 0, 0);
+}
+
+/* ─── BOTON COPIAR (Verde Pastel) ───────────────────────────────────────── */
+.btn-copy {
+    -fx-background-color: #80D39B;
+    -fx-text-fill: #0B4223;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 8;
+    -fx-border-width: 0;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.45), 10, 0, 0, 2);
+}
+
+.btn-copy:hover {
+    -fx-background-color: #98E2B0;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.65), 14, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.btn-copy:pressed {
+    -fx-background-color: #68BA82;
+    -fx-scale-x: 0.98;
+    -fx-scale-y: 0.98;
+}
+
+.btn-copy:disabled {
+    -fx-opacity: 0.35;
+    -fx-cursor: default;
+}
+
+/* ─── LABEL ESTADO DE COPIA ─────────────────────────────────────────────── */
+.copy-status-label {
+    -fx-text-fill: #80D39B;
+    -fx-font-size: 12.5px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(128, 211, 155, 0.40), 6, 0, 0, 0);
+}
+
+/* ─── FOOTER ────────────────────────────────────────────────────────────── */
+.footer-box {
+    -fx-background-color: #2D2641;
+    -fx-padding: 12 32 12 32;
+    -fx-border-color: #4A3E6B transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.footer-label {
+    -fx-text-fill: #9F95BA;
+    -fx-font-size: 11.5px;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: #2A233C;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #554A73;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #80D39B;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #2A233C;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 2;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #80D39B;
+}
